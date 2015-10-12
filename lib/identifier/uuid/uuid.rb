@@ -14,7 +14,7 @@ module Identifier
     end
 
     def self.parse(text)
-      uuid = stream_name.match(pattern).to_s
+      uuid = text.match(pattern).to_s
       uuid = nil if uuid == ''
       uuid
     end
