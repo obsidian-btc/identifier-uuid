@@ -1,8 +1,8 @@
 require_relative 'spec_init'
 
-describe UUID::Random::Substitute do
+describe Identifier::UUID::Random::Substitute do
   context "No assigned UUID" do
-    let(:uuid) { UUID::Random::Substitute.build }
+    let(:uuid) { Identifier::UUID::Random::Substitute.build }
 
     context "UUID" do
       specify "Is nil" do
@@ -12,7 +12,7 @@ describe UUID::Random::Substitute do
   end
 
   context "Assigned UUID" do
-    let(:uuid) { UUID::Random::Substitute.build }
+    let(:uuid) { Identifier::UUID::Random::Substitute.build }
 
     context "UUID" do
       specify "Is nil" do

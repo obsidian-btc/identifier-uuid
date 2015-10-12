@@ -9,7 +9,7 @@ class Thing
 
   def self.build
     instance = new
-    UUID::Random.configure instance
+    Identifier::UUID::Random.configure instance
     instance
   end
 end

@@ -1,4 +1,4 @@
 require_relative 'test_init'
 
-puts UUID::Random.get
-puts UUID::Random.new.get
+puts Identifier::UUID::Random.get
+puts Identifier::UUID::Random.new.get

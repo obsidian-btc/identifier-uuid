@@ -12,11 +12,11 @@ describe ConfiguredRandomUUID::Example do
     let(:uuid) { subject.uuid }
 
     before do
-      UUID::Random.configure subject
+      Identifier::UUID::Random.configure subject
     end
 
     specify "Receiver has a random UUID generator" do
-      assert(uuid.instance_of? UUID::Random)
+      assert(uuid.instance_of? Identifier::UUID::Random)
     end
   end
 end
