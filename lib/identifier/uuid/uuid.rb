@@ -9,11 +9,11 @@ module Identifier
     end
 
     def self.uuid?(text)
-      uuid = get(text).to_s
+      uuid = parse(text).to_s
       uuid == text
     end
 
-    def self.get(text)
+    def self.parse(text)
       uuid = stream_name.match(pattern).to_s
       uuid = nil if uuid == ''
       uuid
