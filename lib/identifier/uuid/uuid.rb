@@ -20,7 +20,17 @@ module Identifier
     end
 
     def self.pattern
-      /[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}/i
+      %r{
+        [a-f0-9]{8}          # abcdef01
+        -                    #         -
+        [a-f0-9]{4}          #          abcd
+        -                    #              -
+        4[a-f0-9]{3}         #               4abc
+        -                    #                   -
+        [89ab][a-f0-9]{3}    #                    8abc
+        -                    #                        -
+        [a-f0-9]{12}         #                         abcdef012345
+      }xi
     end
 
     def self.zero
