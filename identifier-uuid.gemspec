@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 Gem::Specification.new do |s|
-  s.name = 'identifier_uuid'
+  s.name = 'identifier-uuid'
   s.summary = 'UUID identifier generator'
   s.version = '0.0.0'
   s.authors = ['']
