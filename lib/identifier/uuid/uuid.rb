@@ -1,6 +1,6 @@
 module Identifier
   module UUID
-    MATCHER = %r{
+    PATTERN = %r{
       [a-f0-9]{8}          # abcdef01
       -                    #         -
       [a-f0-9]{4}          #          abcd

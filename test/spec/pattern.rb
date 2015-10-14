@@ -1,7 +1,7 @@
 require_relative './spec_init'
 
 describe 'Matching UUID values in regular expressions' do
-  regex = %r{somePrefix-(?<some_token>#{Identifier::UUID::MATCHER})}
+  regex = %r{somePrefix-(?<some_token>#{Identifier::UUID::PATTERN})}
 
   specify 'Matches UUID' do
     uuid = "abcdef01-abcd-4abc-8abc-abcdef012345"
