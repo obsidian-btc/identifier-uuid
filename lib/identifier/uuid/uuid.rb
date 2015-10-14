@@ -20,7 +20,15 @@ module Identifier
     end
 
     def self.pattern
-      %r{
+      Pattern::TYPE_4
+    end
+
+    def self.zero
+      '00000000-0000-0000-0000-000000000000'
+    end
+
+    module Pattern
+      TYPE_4 = %r{
         [a-f0-9]{8}          # abcdef01
         -                    #         -
         [a-f0-9]{4}          #          abcd
@@ -31,10 +39,6 @@ module Identifier
         -                    #                        -
         [a-f0-9]{12}         #                         abcdef012345
       }xi
-    end
-
-    def self.zero
-      '00000000-0000-0000-0000-000000000000'
     end
   end
 end
