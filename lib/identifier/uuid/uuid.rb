@@ -7,7 +7,7 @@ module Identifier
       -                    #              -
       4[a-f0-9]{3}         #               4abc
       -                    #                   -
-      [89aAbB][a-f0-9]{3}  #                    8abc
+      [89ab][a-f0-9]{3}    #                    8abc
       -                    #                        -
       [a-f0-9]{12}         #                         abcdef012345
     }xi
