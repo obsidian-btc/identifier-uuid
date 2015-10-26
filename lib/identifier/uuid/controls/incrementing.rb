@@ -16,7 +16,7 @@ module Identifier
             third_prefix = third_prefixes[0]
           end
 
-          "#{first_octet}-4000-#{third_prefix}000-0000-000000000000"
+          "#{first_octet}-0000-4000-#{third_prefix}000-000000000000"
         end
       end
     end
