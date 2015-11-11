@@ -1,3 +1,3 @@
 source ./library-symlinks.sh
 
-symlink_lib 'uuid', 'identifier'
+symlink_lib 'uuid' 'identifier'
