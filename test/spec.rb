@@ -1,5 +1,8 @@
 require_relative 'test_init'
 
-Runner.('spec/*.rb') do |exclude|
-  exclude =~ /_init.rb\z/
+ruby_files = Dir[File.dirname(__FILE__) + '/spec/*.rb']
+spec_files = ruby_files.delete_if { |file| file.end_with? '_init.rb' }
+
+spec_files.each do |file|
+  load "./#{file}"
 end
