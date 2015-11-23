@@ -13,9 +13,19 @@ module Identifier
         SecureRandom.uuid
       end
 
-      def self.configure(receiver)
+      def self.configure(receiver, attr_name=nil)
         instance = new
-        receiver.uuid = instance
+
+        if attr_name.nil?
+          if receiver.respond_to?(:identifier)
+            attr_name = :identifier
+          else
+            attr_name = :uuid
+          end
+        end
+
+        receiver.send "#{attr_name}=", instance
+
         instance
       end
 
