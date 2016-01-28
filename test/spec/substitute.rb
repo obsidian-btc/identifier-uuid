@@ -1,21 +1,21 @@
 require_relative 'spec_init'
 
-describe Identifier::UUID::Random::Substitute do
+context Identifier::UUID::Random::Substitute do
   context "No assigned UUID" do
-    let(:uuid) { Identifier::UUID::Random::Substitute.build }
+    uuid = Identifier::UUID::Random::Substitute.build
 
     context "UUID" do
-      specify "Is nil" do
-        assert_nil(uuid.get)
+      test "Is nil" do
+        assert(uuid.get.nil?)
       end
     end
   end
 
   context "Assigned UUID" do
-    let(:uuid) { Identifier::UUID::Random::Substitute.build }
+    uuid = Identifier::UUID::Random::Substitute.build
 
     context "UUID" do
-      specify "Is nil" do
+      test "Is nil" do
         val = 'some uuid'
         uuid.set val
 

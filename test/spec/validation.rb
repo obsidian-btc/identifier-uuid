@@ -1,8 +1,8 @@
 require_relative 'spec_init'
 
-describe 'Validating a given UUID' do
+context 'Validating a given UUID' do
   context 'A valid UUID is passed in' do
-    specify 'Returns true' do
+    test 'Returns true' do
       identifier = Identifier::UUID::Controls::Random.example
       validated = Identifier::UUID.uuid?(identifier)
 
@@ -11,7 +11,7 @@ describe 'Validating a given UUID' do
   end
 
   context 'An invalid UUID is passed in' do
-    specify 'Returns false' do
+    test 'Returns false' do
       identifier = Identifier::UUID::Controls::Invalid.example
       validated = Identifier::UUID.uuid?(identifier)
 
@@ -20,7 +20,7 @@ describe 'Validating a given UUID' do
   end
 
   context 'No UUID is passed in' do
-    specify 'Returns false' do
+    test 'Returns false' do
       identifier = '12345678'
       validated = Identifier::UUID.uuid?(identifier)
 

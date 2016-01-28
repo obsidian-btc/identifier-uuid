@@ -21,43 +21,37 @@ module Configured
   end
 end
 
-describe "Configured Receiver" do
+context "Configured Receiver" do
   context "Receiver attribute named uuid" do
-    let(:receiver) { Configured::UUID::Example.new }
-    let(:uuid) { receiver.uuid }
+    receiver = Configured::UUID::Example.new
 
-    before do
-      Identifier::UUID::Random.configure receiver
-    end
+    Identifier::UUID::Random.configure receiver
+    uuid = receiver.uuid
 
-    specify "Receiver has a random UUID generator" do
+    test "Receiver has a random UUID generator" do
       assert(uuid.instance_of? Identifier::UUID::Random)
     end
   end
 
   context "Receiver attribute named identifier" do
-    let(:receiver) { Configured::Identifier::Example.new }
-    let(:identifier) { receiver.identifier }
+    receiver = Configured::Identifier::Example.new
 
-    before do
-      Identifier::UUID::Random.configure receiver
-    end
+    Identifier::UUID::Random.configure receiver
+    identifier = receiver.identifier
 
-    specify "Receiver has a random UUID generator" do
+    test "Receiver has a random UUID generator" do
       assert(identifier.instance_of? Identifier::UUID::Random)
     end
   end
 
   context "Receiver has both uuid and identifier" do
-    let(:receiver) { Configured::Both::Example.new }
-    let(:uuid) { receiver.uuid }
-    let(:identifier) { receiver.identifier }
+    receiver = Configured::Both::Example.new
 
-    before do
-      Identifier::UUID::Random.configure receiver
-    end
+    Identifier::UUID::Random.configure receiver
+    uuid = receiver.uuid
+    identifier = receiver.identifier
 
-    specify "Precedence is given to identifier over uuid" do
+    test "Precedence is given to identifier over uuid" do
       assert(identifier.instance_of? Identifier::UUID::Random)
       assert(uuid.nil?)
     end
